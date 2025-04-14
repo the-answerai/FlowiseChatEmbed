@@ -1,3 +1,4 @@
+/* eslint-env node */
 Error.stackTraceLimit = 0;
 
 import express from 'express';
