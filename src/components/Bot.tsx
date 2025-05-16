@@ -794,12 +794,15 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
     const chatId = params.chatId;
     const input = params.question;
     params.streaming = true;
+    const token = sessionStorage.getItem('access_token');
     fetchEventSource(`${props.apiHost}/api/v1/prediction/${chatflowid}`, {
       openWhenHidden: true,
       method: 'POST',
       body: JSON.stringify(params),
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
       async onopen(response) {
         if (response.ok && response.headers.get('content-type')?.startsWith(EventStreamContentType)) {
@@ -834,6 +837,9 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
             break;
           case 'usedTools':
             updateLastMessageUsedTools(payload.data);
+            break;
+          case 'agent_trace':
+            console.log('[AgentTrace]', payload.data);
             break;
           case 'fileAnnotations':
             updateLastMessageFileAnnotations(payload.data);
