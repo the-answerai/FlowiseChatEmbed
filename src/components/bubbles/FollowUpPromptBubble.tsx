@@ -8,7 +8,7 @@ export const FollowUpPromptBubble = (props: Props) => (
     <div
       data-modal-target="defaultModal"
       data-modal-toggle="defaultModal"
-      class="flex justify-start items-start animate-fade-in gap-1 host-container hover:brightness-90 active:brightness-75"
+      class="flex justify-start items-start animate-fade-in gap-1 host-container hover:brightness-90 active:brightness-75 followup-prompt-bubble-root"
       onClick={() => props.onPromptClick?.()}
     >
       <span
