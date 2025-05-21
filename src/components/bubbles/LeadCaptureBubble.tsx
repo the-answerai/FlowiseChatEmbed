@@ -82,7 +82,7 @@ export const LeadCaptureBubble = (props: Props) => {
   };
 
   return (
-    <div class="flex flex-row justify-start mb-2 items-start host-container" style={{ 'margin-right': '50px' }}>
+    <div class="flex flex-row justify-start mb-2 items-start host-container leadcapture-bubble-root" style={{ 'margin-right': '50px' }}>
       <Show when={props.showAvatar}>
         <Avatar initialAvatarSrc={props.avatarSrc} />
       </Show>

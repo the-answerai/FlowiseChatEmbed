@@ -341,7 +341,7 @@ const FormInputView = (props: {
 
   return (
     <div
-      class="w-full h-full flex flex-col items-center justify-center px-4 py-8 rounded-lg"
+      class="w-full h-full flex flex-col items-center justify-center px-4 py-8 rounded-lg bot-form-root"
       style={{
         'font-family': 'Poppins, sans-serif',
         'font-size': props.fontSize ? `${props.fontSize}px` : '16px',
@@ -1758,7 +1758,9 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
       ) : (
         <div
           ref={botContainer}
-          class={'relative flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' + props.class}
+          class={
+            'bot-root relative flex w-full h-full text-base overflow-hidden bg-cover bg-center flex-col items-center chatbot-container ' + props.class
+          }
           onDragEnter={handleDrag}
         >
           {isDragActive() && (

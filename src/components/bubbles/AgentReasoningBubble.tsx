@@ -81,7 +81,7 @@ export const AgentReasoningBubble = (props: Props) => {
   };
 
   return (
-    <div class="mb-6">
+    <div class="mb-6 agent-bubble-root">
       {props.agentArtifacts && (
         <div class="flex flex-row items-start flex-wrap w-full gap-2">
           <For each={agentReasoningArtifacts(props.agentArtifacts)}>

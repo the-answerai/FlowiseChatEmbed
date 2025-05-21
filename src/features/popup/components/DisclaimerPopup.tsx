@@ -46,7 +46,7 @@ export const DisclaimerPopup = (props: DisclaimerPopupProps) => {
   return (
     <Show when={popupProps.isOpen}>
       <div
-        class="fixed inset-0 rounded-lg flex items-center justify-center backdrop-blur-sm z-50"
+        class="fixed inset-0 rounded-lg flex items-center justify-center backdrop-blur-sm z-50 disclaimer-popup-root"
         style={{ background: popupProps.blurredBackgroundColor || 'rgba(0, 0, 0, 0.4)' }}
       >
         <div

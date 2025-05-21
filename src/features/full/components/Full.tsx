@@ -51,6 +51,7 @@ export const Full = (props: FullProps, { element }: { element: HTMLElement }) =>
       <style>{styles}</style>
       <Show when={isBotDisplayed()}>
         <div
+          class="full-root"
           style={{
             'background-color': props.theme?.chatWindow?.backgroundColor || '#ffffff',
             height: props.theme?.chatWindow?.height ? `${props.theme?.chatWindow?.height.toString()}px` : '100dvh',
